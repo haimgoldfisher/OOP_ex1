@@ -1,6 +1,6 @@
 # Ex1 - Offline Elevator Algorithm
 
- <code><img height="300" width="600" src="https://emakelevator.com/wp-content/uploads/2020/12/yerinekou.png"/></code>
+ <code><img height="300" width="600" src="https://38i4h31480aw2fd03t4av02o-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Smart-Elevators.jpg"/></code>
 
 #### @ Or Yitshak & Haim Goldfisher
 
