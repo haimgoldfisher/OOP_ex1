@@ -6,7 +6,7 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
         building, calls, output = exporter(Building, Calls, Output) # it will export the relevant files
     except ImportError as err:
         print(err)
-
+    # we want list of elevators
 
 
 
