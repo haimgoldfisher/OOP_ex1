@@ -1,6 +1,10 @@
 # Ex1 - Offline Elevator Algorithm
 
-### 1. Introduction and resources:
+#### @ Or Yitshak & Haim Goldfisher
+
+---------
+
+## 1. Introduction and resources:
 We want to design an efficient algorithm for a smart elevator. It should be noted that in some articles there is a lot of reference to the engineering or economic aspect of elevators. We focused solely on the algorithms that the elevators implement. Sources we used:
 
 a. https://www.youtube.com/watch?v=xOayymoIl8U - A nice video that focuses on the logic behind elevators. It presents an opinion that systematic walking along the floor closest to the elevator is a problematic principle. When there is a person on a remote floor, the elevator may not reach him at all. Another thing reviewed there, is the ability of the elevators to "communicate" with each other using an efficient algorithm. That is, when we maintain the activity of the elevators, it is more convenient for us to instruct the other elevators how to operate. Also, the video indicates that it is necessary to reach a minimum waiting time even inside the elevator and not just at the waiting for it. Another interesting point that emerges from the video is that the nature of the structure needs to be understood in depth. For example, there is a difference between a number of adjacent elevators and a situation where each elevator is at a great distance from each other (e.g. in a wide building where each elevator is at a different edge of the building).
@@ -11,6 +15,23 @@ c. https://www.google.com/url?sa=t&source=web&rct=j&url=https://www.diva-portal.
 
 d. https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/ - A thought-provoking and very interesting but less practical article on lifts and choosing a suitable algorithm for them. The article for example takes into account the question of whether it is better to wait outside the elevator or inside the elevator. A point is less critical for us since we have no meaning for waiting outside or inside an elevator.
 
-### 2. The difference between Offline and Online algorithms:
+---------
+
+## 2. The difference between Offline and Online algorithms:
 The main difference between the above two modes is the ability of the elevator to prepare for the sequence of actions. That is, when it comes to Online mode, a number of variables must be taken into account. There is a higher probability of a call, so the elevator will be available most of the time to this floor.
 In Offline mode, on the other hand, we want to design the shortest elevator route that "covers" as many people as possible, so that the waiting time for an elevator is minimal. We can use all the elevators we have for this purpose, without considering additional considerations. Another thing that is fascinating about the offline algorithm is the ability to be a fortune teller. That is, we can assign an elevator to call even before it has received one! In addition, the elevator will be able to ignore calls in order to wait for a more strategic call. All this is possible for us due to the fact that we get the list of calls in advance, as well as the time of the calls.
+
+---------
+
+## 3. The Algorithm:
+
+---------
+
+## 4. Languages and Tools:
+
+  <div align="center">
+  
+  <code><img height="40" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"/></code>
+  <code><img height="40" src="https://www.clipartmax.com/png/middle/136-1368231_farmers-markets-json-icon-transparent.png"/></code>
+  <code><img height="40" width="80" src="https://user-images.githubusercontent.com/74299934/124384183-c15bd600-dcd8-11eb-8350-d1980f87b8c8.png"/></code>
+  
