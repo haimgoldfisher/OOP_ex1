@@ -24,6 +24,7 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
     elevators = building["_elevators"]
     elev_list = []
     #create a list that contains all the elevators.
+    #Extracting the from the elevaors dictionry
     for elev in elevators:
         id = elev["_id"]
         speed = elev["_speed"]
