@@ -12,8 +12,6 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
 
 
 
-
-
 def exporter(Building, Calls, output):
         try:
             with open(Building, "w") as my_building:
