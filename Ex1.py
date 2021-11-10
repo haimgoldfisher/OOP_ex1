@@ -53,6 +53,14 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
             :return: the time that will take to the elevator to answer and finish the call
         """
 
+    def fill_output(output:pd.DataFrame, elev_num:int, call_num:int) -> None:
+        """
+            this function gets the output csv and fill the chosen cell with the allocated elevator
+            :param output: the csv output
+            :param elev_num: the chosen elevator to take the call (from allocted)
+            :param call_num: the number of the call which we fill
+        """
+        output[5][call_num] = elev_num
 
 def exporter(building, calls, output):
         try:
