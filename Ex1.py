@@ -6,7 +6,6 @@ from Elevator import Elevator
 
 def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <output.csv>
     """
-
     :param Building:
     :param Calls:
     :param Output:
@@ -38,30 +37,40 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
         elev_list.append(x)
     print(elev_list)
 
+    def elevator_allocation():
+        """
+            :param Building:
+            :param Calls:
+            :param Output:
+            :return: the elevator which we send to answer this call
+        """
+
+    def time_calc():
+        """
+            :param Building:
+            :param Calls:
+            :param Output:
+            :return: the time that will take to the elevator to answer and finish the call
+        """
 
 
-
-
-<<<<<<< HEAD
-def exporter(Building, Calls, output):
-||||||| 668d5f3
-
-
-def exporter(Building, Calls, output):
-=======
 def exporter(building, calls, output):
->>>>>>> 5aa7e24c6e7092750e7f6f429f7a577df6689c4c
         try:
             with open(building, "r") as my_building:
                 my_d = json.load(my_building)  # building JSON reading
         except ImportError as err:
             print(err)
         try:
-            my_calls = pd.read_csv(calls)  # calls csv importing
+# we can use our calls csv for more quick calculations: the direction of the call and the length of the route
+            call_index = ["Name", "Time", "Source", "Destination", "Status", "Allocation"] # column names
+# be aware that "Name" & "Status" columns are unnecessary columns
+            my_calls = pd.read_csv(calls, names=call_index) # calls csv importing, with col names
+            my_calls["Direction"] = my_calls["Source"] < my_calls["Destination"]  # False = down, True = up
+            my_calls["Route_Length"] = abs(my_calls["Source"] - my_calls["Destination"])
         except ImportError as err:
             print(err)
         try:
-            my_output = pd.read_csv(output)  # output csv importing
+            my_output = pd.read_csv(output, header=None)  # output csv importing, without names
         except ImportError as err:
             print(err)
         return (my_d, my_calls, my_output)
