@@ -25,15 +25,7 @@ def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <ou
     #create a list that contains all the elevators.
     #Extracting the from the elevaors dictionry
     for elev in elevators:
-        id = elev["_id"]
-        speed = elev["_speed"]
-        elev_minFloor = elev["_minFloor"]
-        elev_maxFloor = elev["_maxFloor"]
-        closeTime = elev["_closeTime"]
-        openTime = elev["_openTime"]
-        startTime = elev["_startTime"]
-        stopTime = elev["_stopTime"]
-        x = Elevator(id,speed,elev_minFloor,elev_maxFloor,closeTime,openTime,startTime,stopTime)
+        x = Elevator(elev)
         elev_list.append(x)
     print(elev_list)
 
