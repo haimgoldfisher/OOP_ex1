@@ -2,7 +2,7 @@ import json
 
 
 class Elevator(object):
-    def __init__(self, id: str, speed: float, minFloor: int, maxFloor: int, closeTime: float, openTime: float, startTime: float, stopTime: float) -> None:
+    def __init__(self, id: str, speed: float, minFloor: int, maxFloor: int, closeTime: float, openTime: float, startTime: float, stopTime: float, **kwargs) -> None:
         self.id = id
         self.speed = speed
         self.minFloor = minFloor
@@ -11,7 +11,7 @@ class Elevator(object):
         self.openTime = openTime
         self.startTime = startTime
         self.stopTime = stopTime
-        self.calls = []
+        self.calls = [] # should be a Call object
 
     def __init__(self, elevator) -> None:
         self.id = elevator["_id"]
@@ -22,7 +22,19 @@ class Elevator(object):
         self.openTime = elevator["_openTime"]
         self.startTime = elevator["_startTime"]
         self.stopTime = elevator["_stopTime"]
-        self.calls = []
+        self.calls = [] # should be a Call object
+
+    def load_from_jfile(self, file_name: str):
+        new_elev_dict = {}
+        try:
+            with open(file_name, "r") as file:
+                dict_obj = json(file)
+                for i , j in dict_obj.items():
+                    elev = Elevator(**j)
+                    new_elev_dict[i] = elev
+                self.calls = new_elev_dict
+        except FileExistsError as err:
+            print(err)
 
     def __str__(self) -> str:
         return f"id:{self.id}, speed:{self.speed}, minFloor:{self.minFloor}, maxFloor:{self.maxFloor}, closeTime:{self.closeTime}," \
@@ -41,6 +53,9 @@ class Elevator(object):
     #def min_time(self, call: Call):
         # should return the elevator with the min time to the call
         # RETURN min(self, key=lambda T: T.TIME?)
+
+    # def __iter__(self):
+    #     return self.calls.values().TIME???.__iter__()
 
     # def to_dict(self) -> dict:
     #     return self.__dict__
