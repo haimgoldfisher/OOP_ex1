@@ -1,5 +1,7 @@
-class Elevator:
-    def __init__(self, id, speed, minFloor, maxFloor, closeTime, openTime, startTime, stopTime) -> None:
+import json
+
+class Elevator(object):
+    def __init__(self, id: str, speed: float, minFloor: int, maxFloor: int, closeTime: float, openTime: float, startTime: float, stopTime: float) -> None:
         self.id = id
         self.speed = speed
         self.minFloor = minFloor
@@ -28,8 +30,17 @@ class Elevator:
     def __repr__(self) -> str:
         return self.__str__()
 
+    def __lt__(self, other) -> bool:
+        # should compare between time attributes of two elevators
+        # RETURN self.TIME? < other.TIME? -- we should use here time_calc method
+        pass
 
+    # def to_dict(self) -> dict:
+    #     return self.__dict__
 
+    def to_json(self) -> json:
+        my_dict = self.__dict__
+        return json.dumps(my_dict)
 # x = Elevator(0,0.5,-2,10,2,2,3,3)
 # print(x)
 # print(x.speed)

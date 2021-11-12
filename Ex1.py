@@ -58,8 +58,10 @@ def exporter(building, calls, output):
         try:
             with open(building, "r") as my_building:
                 my_d = json.load(my_building)  # building JSON reading
-        except ImportError as err:
+        except FileExistsError as err:
             print(err)
+        finally:
+            my_building.close()
         try:
 # we can use our calls csv for more quick calculations: the direction of the call and the length of the route
             call_index = ["Name", "Time", "Source", "Destination", "Status", "Allocation"] # column names
