@@ -20,3 +20,4 @@ class Call(object):
     def to_json(self) -> json:
         my_dict = self.__dict__
         return json.dumps(my_dict)
+

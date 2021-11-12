@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 from Elevator import Elevator
-
+from Call import Call
 
 def Ex1 (Building:str, Calls:str, Output:str): # <Building.json> <Calls.csv> <output.csv>
     """
@@ -76,6 +76,12 @@ def exporter(building, calls, output):
         except ImportError as err:
             print(err)
         return (my_d, my_calls, my_output)
+
+
+def expected_travel_time(call: Call, elev: Elevator) -> float:
+    df = abs(call.source - call.dest)
+    return elev.closeTime + elev.startTime + (df/elev.speed) + elev.stopTime + elev.openTime
+
 # d1, d2, d3 = exporter("data/Ex1_input/Ex1_Buildings/B1.json","data/Ex1_input/Ex1_Calls/Calls_a.csv","data/Ex1_input/Ex1_Calls/Calls_a.csv")
 # print(d1)
 # print(d2)
