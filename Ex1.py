@@ -24,7 +24,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
     elevators = building["_elevators"]
     elev_list = []
     # create a list that contains all the elevators.
-    # Extracting the from the elevators dictionry
+    # Extracting the from the elevators dictionary
     for elev in elevators:
         x = Elevator(elev)
         elev_list.append(x)
@@ -35,7 +35,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
         # fill_output(output, elev_id, call)
         output.loc[call,"Allocation"] = elev_id
     print(output)
-    output.to_csv('output',header=False,index=False)
+    output.to_csv('output', header=False, index=False)
 
 
 def elevator_allocation(elev_list, call):
