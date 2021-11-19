@@ -31,7 +31,7 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ## 3. Results:
 
-|       | Building | Call | Total Waiting Time | Average waiting time per call | UnCompleted calls | Certificate |
+|       | Building | Call | Total Waiting Time | Average Waiting Time Per Call | UnCompleted Calls | Certificate |
 | ----- | ---------| -----| ------------------ | ----------------------------- | ----------------- | ----------- |
 | 1     | B1       | a_1  | 11292              | 112.92                        | 0                 | -273971877  |
 | 2     | B2       | a_2  | 4649               | 46.49                         | 0                 | -237904543  |
