@@ -2,8 +2,7 @@ import pandas as pd
 import json
 
 from Elevator import Elevator
-from Call import Call
-
+import sys
 
 def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> <output.csv>
     """
@@ -38,7 +37,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
     output.to_csv('output', header=False, index=False)
 
 
-def elevator_allocation(elev_list, call):
+def elevator_allocation(elev_list: list, call: int) -> int:
     """
         :param Building:
         :param Calls:
@@ -57,7 +56,7 @@ def elevator_allocation(elev_list, call):
     return elev_id
 
 
-def time_calc(elev, call):
+def time_calc(elev, call) -> float:
     """
         :param Building:
         :param Calls:
@@ -121,7 +120,7 @@ def fill_output(output: pd.DataFrame, elev_num: int, call_num: int) -> None:
 
 
 
-def exporter(building, calls, output):
+def exporter(building: str, calls: str, output :str):
     try:
         with open(building, "r") as my_building:
             my_d = json.load(my_building)  # building JSON reading
@@ -146,10 +145,4 @@ def exporter(building, calls, output):
     return (my_d, my_calls, my_output)
 
 
-def expected_travel_time(call: Call, elev: Elevator) -> float:
-    df = abs(call.source - call.dest)
-    return elev.closeTime + elev.startTime + (df / elev.speed) + elev.stopTime + elev.openTime
-
-
-Ex1("data/Ex1_input/Ex1_Buildings/B4.json", "data/Ex1_input/Ex1_Calls/Calls_a.csv",
-    "data/Ex1_input/Ex1_Calls/Calls_a.csv")
+Ex1(sys.argv[1],sys.argv[2],sys.argv[3])

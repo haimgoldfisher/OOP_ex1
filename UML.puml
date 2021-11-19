@@ -22,7 +22,6 @@ class Ex1
     - elevator_allocation(elev_list, call) -> int
     - time_calc(elev, call) -> float
     - fill_output(output: pd.DataFrame, elev_num: int, call_num: int) -> None
-    - expected_travel_time(call: Call, elev: Elevator) -> float:
 
 }
 
