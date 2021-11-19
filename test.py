@@ -26,20 +26,37 @@ class Testing(unittest.TestCase):
             ]
         }
         json_dmb = json.dumps(building)
-        my_elev = json.loads(json_dmb)
+        my_building = json.loads(json_dmb)
+        my_elev = my_building["_elevators"][0]
         self.assertTrue(type(my_elev) is dict)
+        self.assertEqual(my_elev["_id"], 0)
         self.assertEqual(my_elev["_speed"], 0.5)
+        self.assertEqual(my_elev["_minFloor"], -2)
+        self.assertEqual(my_elev["_maxFloor"], 10)
+        self.assertEqual(my_elev["_closeTime"], 2.0)
+        self.assertEqual(my_elev["_openTime"], 2.0)
+        self.assertEqual(my_elev["_startTime"], 3.0)
+        self.assertEqual(my_elev["_stopTime"], 3.0)
 
-        elev_dct = Elevator("1", 1, 2, 3, 4, 5, 6, 7)
-        self.assertNotEqual(elev_dct["_speed"], elev_dct["_stopTime"])
+        elev = Elevator(my_elev)
+        self.assertTrue(type(my_elev) is dict)
+        self.assertEqual(elev.id, 0)
+        self.assertEqual(elev.speed, 0.5)
+        self.assertEqual(elev.minFloor, -2)
+        self.assertEqual(elev.maxFloor, 10)
+        self.assertEqual(elev.closeTime, 2.0)
+        self.assertEqual(elev.openTime, 2.0)
+        self.assertEqual(elev.startTime, 3.0)
+        self.assertEqual(elev.stopTime, 3.0)
 
     def test_Ex1(self):
         building, calls, output = exporter("B1.json", "Calls_a.csv", "Calls_a.csv")
         for i in range(len(calls)):
-            if calls[i]["Source"] > calls[i]["Destination"]:
-                self.assertTrue(calls[i]["Direction"])
+            if calls.iloc[i].Source < calls.iloc[i].Destination:
+                self.assertTrue(calls.iloc[i]["Direction"])
             else:
-                self.assertFalse(calls[i]["Direction"])
+                self.assertFalse(calls.iloc[i]["Direction"])
+
 
 
 if __name__ == '__main__':
