@@ -27,9 +27,18 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ## 3. The Algorithm:
 
+
+
 ---------
 
-## 3. Results:
+## 4. UML Diagram:
+
+
+<code><img height="450" width="300" src="https://github.com/haimgoldfisher/OOP_ex1/blob/master/UML_img.png?raw=true"/></code>
+
+---------
+
+## 5. Results:
 
 |       | Building | Call | Total Waiting Time | Average Waiting Time Per Call | UnCompleted Calls | Certificate |
 | ----- | ---------| -----| ------------------ | ----------------------------- | ----------------- | ----------- |
@@ -50,7 +59,7 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ---------
 
-## 5. Languages and Tools:
+## 6. Languages and Tools:
 
   <div align="center">
   
