@@ -127,8 +127,10 @@ def exporter(building: str, calls: str, output: str):
     except ImportError as err:
         print(err)
     try:
-        # my_output = pd.read_csv(output, header=None)  # output csv importing, without names
-        my_output = my_calls.copy()
+        my_output_index = ["Name", "Time", "Source", "Destination", "Status", "Allocation"]  # column names
+        my_output = pd.read_csv(output, names=my_output_index)  # calls csv importing, with col names
+        my_output["Direction"] = my_output["Source"] < my_output["Destination"]  # False = down, True = up
+        my_output["Route_Length"] = abs(my_output["Source"] - my_output["Destination"])
     except ImportError as err:
         print(err)
     return (my_d, my_calls, my_output)
