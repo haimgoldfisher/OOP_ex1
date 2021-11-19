@@ -23,17 +23,39 @@ d) https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-
 The main difference between the above two modes is the ability of the elevator to prepare for the sequence of actions. That is, when it comes to Online mode, a number of variables must be taken into account. There is a higher probability of a call, so the elevator will be available most of the time to this floor.
 In Offline mode, on the other hand, we want to design the shortest elevator route that "covers" as many people as possible, so that the waiting time for an elevator is minimal. We can use all the elevators we have for this purpose, without considering additional considerations. Another thing that is fascinating about the offline algorithm is the ability to be a fortune teller. That is, we can assign an elevator to call even before it has received one! In addition, the elevator will be able to ignore calls in order to wait for a more strategic call. All this is possible for us due to the fact that we get the list of calls in advance, as well as the time of the calls.
 
----------
+--------- 
 
 ## 3. The Algorithm:
 
 ---------
 
-## 4. Languages and Tools:
+## 3. Results:
+
+|       | Building | Call | Total Waiting Time | Average Waiting Time Per Call | UnCompleted Calls | Certificate |
+| ----- | ---------| -----| ------------------ | ----------------------------- | ----------------- | ----------- |
+| 1     | B1       | a_1  | 11292              | 112.92                        | 0                 | -273971877  |
+| 2     | B2       | a_2  | 4649               | 46.49                         | 0                 | -237904543  |
+| 3     | B3       | a_3  | 2994               | 29.94                         | 0                 | -44160852   |
+| 4     | B3       | b_3  | 547470.620351999   | 547.470620351999              | 174               | -2001207391 |
+| 5     | B3       | c_3  | 554600.120260004   | 554.600120260004              | 132               | -1969794310 |
+| 6     | B3       | d_3  | 549593.916998004   | 549.593916998004              | 153               | -1979939333 |
+| 7     | B4       | a_4  | 2063               | 20.63                         | 0                 | -54793609   |
+| 8     | B4       | b_4  | 210331.646815999   | 210.331646815999              | 17                | -744519961  |
+| 9     | B4       | c_4  | 213750.38061       | 213.750380609999              | 2                 | -747533748  |
+| 10    | B4       | d_4  | 205285.061562      | 205.285061561999              | 7                 | -762051044  |
+| 11    | B5       | a_5  | 1714               | 17.14                         | 0                 | -69599288   |
+| 12    | B5       | b_5  | 50362              | 50.362                        | 0                 | -219374659  |
+| 13    | B5       | c_5  | 47999              | 47.999                        | 0                 | -250958602  |
+| 14    | B5       | d_5  | 49564.437366       | 49.564437366                  | 1                 | -223098839  |
+
+---------
+
+## 5. Languages and Tools:
 
   <div align="center">
   
   <code><img height="40" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"/></code>
+  <code><img height="40" src="https://pbs.twimg.com/profile_images/1206603239791218688/0AwZ0m6W_400x400.jpg"/></code>
   <code><img height="40" src="https://www.clipartmax.com/png/middle/136-1368231_farmers-markets-json-icon-transparent.png"/></code>
   <code><img height="40" width="80" src="https://user-images.githubusercontent.com/74299934/124384183-c15bd600-dcd8-11eb-8350-d1980f87b8c8.png"/></code>
   
