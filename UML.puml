@@ -18,9 +18,9 @@ class Elevator
 class Ex1
 {
     + Ex1(Building: str, Calls: str, Output: str) -> None
-    - exporter(building, calls, output) -> dict, pd.DataFrame,pd.DataFrame
-    - elevator_allocation(elev_list, call) -> int
-    - time_calc(elev, call) -> float
+    - exporter(building: str, calls: str, output: str) -> dict, pd.DataFrame,pd.DataFrame
+    - elevator_allocation(elev_list: list, call: int) -> int
+    - time_calc(elev: Elevator, call: int) -> float
     - fill_output(output: pd.DataFrame, elev_num: int, call_num: int) -> None
 
 }

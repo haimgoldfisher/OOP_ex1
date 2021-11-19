@@ -6,22 +6,21 @@ import sys
 
 def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> <output.csv>
     """
-    :param Building:
-    :param Calls:
-    :param Output:
-    :return:
+    :param Building: address of the building json file
+    :param Calls: address of the calls csv
+    :param Output: address of the calls csv
+    The main function of the program, it will insert the allocating column of the calls csv (output csv)
     """
     # At first we try to read the files into variables
     try:
         building, calls, output = exporter(Building, Calls, Output)  # it will export the relevant files
     except ImportError as err:
         print(err)
-    # we want list of elevators
     print(building)
     building_min_floor = building["_minFloor"]
     building_max_floor = building["_maxFloor"]
     elevators = building["_elevators"]
-    elev_list = []
+    elev_list = [] # a want list of elevators
     # create a list that contains all the elevators.
     # Extracting the from the elevators dictionary
     for elev in elevators:
@@ -39,10 +38,9 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
 
 def elevator_allocation(elev_list: list, call: int) -> int:
     """
-        :param Building:
-        :param Calls:
-        :param Output:
-        :return: the elevator which we send to answer this call
+        :param elev_list: the list of the elevators of the building
+        :param call: the index of the call in the Calls data frame (pandas)
+        :return: the elevator's index which we send to answer this call
     """
     min_time = float('inf')
     elev_id = -1
@@ -56,11 +54,10 @@ def elevator_allocation(elev_list: list, call: int) -> int:
     return elev_id
 
 
-def time_calc(elev, call) -> float:
+def time_calc(elev: Elevator, call: int) -> float:
     """
-        :param Building:
-        :param Calls:
-        :param Output:
+        :param elev: the chosen elevator which we want to calculate it's time to answer and finish the given call
+        :param call: the index of the call in the Calls data frame (pandas)
         :return: the time that will take to the elevator to answer and finish the call
     """
     # time_per_floor = 1 / elev.speed
