@@ -1,0 +1,38 @@
+@startuml
+
+class Elevator
+{
+    - id: str
+    - speed: float
+    - minFloor: Integer
+    - maxFloor: Integer
+    - closeTime: float
+    - openTime: float
+    - startTime: float
+    - stopTime: float
+    - calls: list
+    + load_from_jfile(self, file_name: str) -> dict
+    + to_json(self) -> json:
+}
+
+class Ex1
+{
+    + Ex1(Building: str, Calls: str, Output: str) -> None
+    - exporter(building, calls, output) -> dict, pd.DataFrame,pd.DataFrame
+    - elevator_allocation(elev_list, call) -> int
+    - time_calc(elev, call) -> float
+    - fill_output(output: pd.DataFrame, elev_num: int, call_num: int) -> None
+    - expected_travel_time(call: Call, elev: Elevator) -> float:
+
+}
+
+class test
+{
+    + test_Elevator(self)
+    + test_Ex1(self):
+}
+
+Elevator --> Ex1
+Ex1 --> test
+
+@enduml

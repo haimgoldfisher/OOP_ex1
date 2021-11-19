@@ -12,7 +12,7 @@ class Elevator(object):
         self.openTime = openTime
         self.startTime = startTime
         self.stopTime = stopTime
-        self.calls = []  # should be a Call object
+        self.calls = []
 
     def __init__(self, elevator) -> None:
         self.id = elevator["_id"]
@@ -23,7 +23,7 @@ class Elevator(object):
         self.openTime = elevator["_openTime"]
         self.startTime = elevator["_startTime"]
         self.stopTime = elevator["_stopTime"]
-        self.calls = []  # should be a Call object
+        self.calls = []
 
     def load_from_jfile(self, file_name: str):
         new_elev_dict = {}
@@ -44,26 +44,6 @@ class Elevator(object):
     def __repr__(self) -> str:
         return self.__str__()
 
-    def __lt__(self, other) -> bool:
-        # should compare between time attributes of two elevators
-        # RETURN self.TIME? < other.TIME? -- we should use here time_calc method
-        pass
-
-    # def calc_time(self, call: Call):
-
-    # def min_time(self, call: Call):
-    # should return the elevator with the min time to the call
-    # RETURN min(self, key=lambda T: T.TIME?)
-
-    # def __iter__(self):
-    #     return self.calls.values().TIME???.__iter__()
-
-    # def to_dict(self) -> dict:
-    #     return self.__dict__
-
     def to_json(self) -> json:
         my_dict = self.__dict__
         return json.dumps(my_dict)
-# x = Elevator(0,0.5,-2,10,2,2,3,3)
-# print(x)
-# print(x.speed)
