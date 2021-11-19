@@ -6,7 +6,7 @@
 
 ---------
 
-## 1. Introduction and resources:
+## 1. Introduction and Resources:
 We want to design an efficient algorithm for a smart elevator. It should be noted that in some articles there is a lot of reference to the engineering or economic aspect of elevators. We focused solely on the algorithms that the elevators implement. Sources we used:
 
 a) https://www.youtube.com/watch?v=xOayymoIl8U - A nice video that focuses on the logic behind elevators. It presents an opinion that systematic walking along the floor closest to the elevator is a problematic principle. When there is a person on a remote floor, the elevator may not reach him at all. Another thing reviewed there, is the ability of the elevators to "communicate" with each other using an efficient algorithm. That is, when we maintain the activity of the elevators, it is more convenient for us to instruct the other elevators how to operate. Also, the video indicates that it is necessary to reach a minimum waiting time even inside the elevator and not just at the waiting for it. Another interesting point that emerges from the video is that the nature of the structure needs to be understood in depth. For example, there is a difference between a number of adjacent elevators and a situation where each elevator is at a great distance from each other (e.g. in a wide building where each elevator is at a different edge of the building).
@@ -19,7 +19,7 @@ d) https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-
 
 ---------
 
-## 2. The differences between 'Offline' and 'Online' algorithms:
+## 2. The Differences Between 'Offline' and 'Online' Algorithms:
 The main difference between the above two modes is the ability of the elevator to prepare for the sequence of actions. That is, when it comes to Online mode, a number of variables must be taken into account. There is a higher probability of a call, so the elevator will be available most of the time to this floor.
 In Offline mode, on the other hand, we want to design the shortest elevator route that "covers" as many people as possible, so that the waiting time for an elevator is minimal. We can use all the elevators we have for this purpose, without considering additional considerations. Another thing that is fascinating about the offline algorithm is the ability to be a fortune teller. That is, we can assign an elevator to call even before it has received one! In addition, the elevator will be able to ignore calls in order to wait for a more strategic call. All this is possible for us due to the fact that we get the list of calls in advance, as well as the time of the calls.
 
@@ -27,8 +27,18 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ## 3. The Algorithm:
 
+The Algorithms gets three arguments (the two CSV files are the same): JSON building file, CSV calls file and CSV calls file for output.
 
 
+For each call from the calls data frame, go over each of the given building's elevators:
+1. Calculate how long it will take for the above calling to be performed by the given elevator by calculating:
+    * The distance of the route.
+    * The speed of the elevator.
+    * The time to open and close the elevator doors.
+    * The acceleration and stopping time of the elevator.
+2. Choose the elevator that will take the shortest time to make the call.
+3. Insert the selected elevator index in the 'allocating' column of the given call.
+4. Return the filled output dataframe as a csv file.
 ---------
 
 ## 4. UML Diagram:
