@@ -4,6 +4,7 @@ import json
 from Elevator import Elevator
 import sys
 
+
 def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> <output.csv>
     """
     :param Building: address of the building json file
@@ -20,7 +21,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
     building_min_floor = building["_minFloor"]
     building_max_floor = building["_maxFloor"]
     elevators = building["_elevators"]
-    elev_list = [] # a want list of elevators
+    elev_list = []  # a want list of elevators
     # create a list that contains all the elevators.
     # Extracting the from the elevators dictionary
     for elev in elevators:
@@ -31,7 +32,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
     for call in range(len(calls)):
         elev_id = elevator_allocation(elev_list, calls.iloc[call])
         # fill_output(output, elev_id, call)
-        output.loc[call,"Allocation"] = elev_id
+        output.loc[call, "Allocation"] = elev_id
     print(output)
     output.to_csv('output', header=False, index=False)
 
@@ -98,11 +99,12 @@ def time_calc(elev: Elevator, call: int) -> float:
         if i + 1 == num_calls and next_type == curr_type:
             rout.append(max_min)
     floors_passing = 0
-    for i in range(len(rout)-1):
+    for i in range(len(rout) - 1):
         x = rout[i]
         y = rout[i + 1]
         floors_passing += abs(x - y)
-    rout_time = floors_passing * time_per_floor + num_calls * (elev.startTime + elev.stopTime + elev.openTime + elev.closeTime)
+    rout_time = floors_passing * time_per_floor + num_calls * (
+                elev.startTime + elev.stopTime + elev.openTime + elev.closeTime)
     return rout_time
 
 
@@ -116,8 +118,7 @@ def fill_output(output: pd.DataFrame, elev_num: int, call_num: int) -> None:
     output.loc[call_num]["Allocation"] = elev_num
 
 
-
-def exporter(building: str, calls: str, output :str):
+def exporter(building: str, calls: str, output: str):
     try:
         with open(building, "r") as my_building:
             my_d = json.load(my_building)  # building JSON reading
@@ -135,11 +136,14 @@ def exporter(building: str, calls: str, output :str):
     except ImportError as err:
         print(err)
     try:
-        #my_output = pd.read_csv(output, header=None)  # output csv importing, without names
+        # my_output = pd.read_csv(output, header=None)  # output csv importing, without names
         my_output = my_calls.copy()
     except ImportError as err:
         print(err)
     return (my_d, my_calls, my_output)
 
 
-Ex1(sys.argv[1],sys.argv[2],sys.argv[3])
+if len(sys.argv) == 4:
+    Ex1(sys.argv[1], sys.argv[2], sys.argv[3])
+else:
+    Ex1("B1.json", "Calls_a.csv", "Calls_a.csv")
