@@ -23,7 +23,7 @@ def Ex1(Building: str, Calls: str, Output: str):  # <Building.json> <Calls.csv> 
     elevators = building["_elevators"]
     elev_list = []  # a want list of elevators
     # create a list that contains all the elevators.
-    # Extracting the from the elevators dictionary
+    # Extracting the data from the elevators dictionary
     for elev in elevators:
         x = Elevator(elev)
         elev_list.append(x)
@@ -42,6 +42,9 @@ def elevator_allocation(elev_list: list, call: int) -> int:
         :param elev_list: the list of the elevators of the building
         :param call: the index of the call in the Calls data frame (pandas)
         :return: the elevator's index which we send to answer this call
+        this function will go over the elevator and for each one it will calculate the time will ut to
+        answer the new call. finally it will return the id of the elevator that will answer the call in
+        the lowest time.
     """
     min_time = float('inf')
     elev_id = -1
@@ -60,21 +63,9 @@ def time_calc(elev: Elevator, call: int) -> float:
         :param elev: the chosen elevator which we want to calculate it's time to answer and finish the given call
         :param call: the index of the call in the Calls data frame (pandas)
         :return: the time that will take to the elevator to answer and finish the call
+        for a given elevator this function will calculate its current rout and the time it will take it
+        to answer a given call.
     """
-    # time_per_floor = 1 / elev.speed
-    # time_of_first = 0
-    # num_calls = len(elev.calls);
-    # if num_calls == 0:  # if the elevator dont have any other calls it will simply calculate the time to get to the
-    #     # source and from the sorce to the destination
-    #     floors_to_src = abs(call.Source - elev.getPos())  # **
-    #     x = time_per_floor * floors_to_src
-    #     time_to_src = elev.startTime + x + elev.stopTime + elev.openTime + elev.closeTime()
-    #     floors_to_dest = abs(call.Destination - call.Source)
-    #     y = time_per_floor * floors_to_dest
-    #     src_to_dest = elev.startTime + y + elev.stopTime + elev.openTime
-    #     new_call_rout_time = time_to_src + src_to_dest
-    #     return new_call_rout_time
-
     time_per_floor = 1 / elev.speed
     num_calls = len(elev.calls)
     if num_calls == 0:
