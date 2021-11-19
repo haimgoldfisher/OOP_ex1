@@ -27,19 +27,20 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ## 3. The Algorithm:
 
-The Algorithms gets three arguments (the two CSV files are the same): JSON building file, CSV calls file and CSV calls file for output.
+*The Algorithms gets three arguments (the two CSV files are the same): JSON building file, CSV calls file and CSV calls file for output.*
 
 
-For each call from the calls data frame, go over each of the given building's elevators:
-1. Calculate how long it will take for the above calling to be performed by the given elevator by calculating:
-    * The distance of the route.
-    * The speed of the elevator.
-    * The time to open and close the elevator doors.
-    * The acceleration and stopping time of the elevator.
-2. Choose the elevator that will take the shortest time to make the call.
-3. Insert the selected elevator index in the 'allocating' column of the given call.
-4. 
-Return the filled output dataframe as a csv file.
+ - *For each call from the calls data frame, go over each of the given building's elevators:*
+    * Calculate how long it will take for the above *call* to be performed by the given elevator by calculating:
+        * The distance of the route.
+        * The speed of the elevator.
+        * The time to open and close the elevator doors.
+        * The acceleration and stopping time of the elevator.
+    * Choose the elevator that will take the shortest time to make the call.
+    * Insert the selected *elevator index* in the *'allocating' column* of the given call.
+
+ - *Return the filled output dataframe as a csv file.*
+
 ---------
 
 ## 4. UML Diagram:
