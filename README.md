@@ -38,6 +38,7 @@ For each call from the calls data frame, go over each of the given building's el
     * The acceleration and stopping time of the elevator.
 2. Choose the elevator that will take the shortest time to make the call.
 3. Insert the selected elevator index in the 'allocating' column of the given call.
+4. 
 Return the filled output dataframe as a csv file.
 ---------
 
