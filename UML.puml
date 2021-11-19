@@ -31,7 +31,7 @@ class test
     + test_Ex1(self):
 }
 
-Elevator --> Ex1
-Ex1 --> test
+Elevator --|> Ex1
+Ex1 --|> test
 
 @enduml
