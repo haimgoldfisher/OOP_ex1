@@ -23,17 +23,39 @@ d) https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-
 The main difference between the above two modes is the ability of the elevator to prepare for the sequence of actions. That is, when it comes to Online mode, a number of variables must be taken into account. There is a higher probability of a call, so the elevator will be available most of the time to this floor.
 In Offline mode, on the other hand, we want to design the shortest elevator route that "covers" as many people as possible, so that the waiting time for an elevator is minimal. We can use all the elevators we have for this purpose, without considering additional considerations. Another thing that is fascinating about the offline algorithm is the ability to be a fortune teller. That is, we can assign an elevator to call even before it has received one! In addition, the elevator will be able to ignore calls in order to wait for a more strategic call. All this is possible for us due to the fact that we get the list of calls in advance, as well as the time of the calls.
 
----------
+--------- 
 
 ## 3. The Algorithm:
 
 ---------
 
-## 4. Languages and Tools:
+## 3. Results:
+
+|               | Building | Call  | Total Waiting Time | Average waiting time per call | UnCompleted calls | Certificate |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| 1             | B1       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 2             | B2       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 3             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 4             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 5             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 6             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 7             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 8             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 9             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 10            | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 11            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 12            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 13            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+| 14            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+
+---------
+
+## 5. Languages and Tools:
 
   <div align="center">
   
   <code><img height="40" src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"/></code>
+  <code><img height="40" src="https://pbs.twimg.com/profile_images/1206603239791218688/0AwZ0m6W_400x400.jpg"/></code>
   <code><img height="40" src="https://www.clipartmax.com/png/middle/136-1368231_farmers-markets-json-icon-transparent.png"/></code>
   <code><img height="40" width="80" src="https://user-images.githubusercontent.com/74299934/124384183-c15bd600-dcd8-11eb-8350-d1980f87b8c8.png"/></code>
   
