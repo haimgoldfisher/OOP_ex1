@@ -31,22 +31,22 @@ In Offline mode, on the other hand, we want to design the shortest elevator rout
 
 ## 3. Results:
 
-|               | Building | Call  | Total Waiting Time | Average waiting time per call | UnCompleted calls | Certificate |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1             | B1       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 2             | B2       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 3             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 4             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 5             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 6             | B3       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 7             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 8             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 9             | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 10            | B4       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 11            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 12            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 13            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-| 14            | B5       | a_1  | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+|       | Building | Call | Total Waiting Time | Average waiting time per call | UnCompleted calls | Certificate |
+| ----- | ---------| -----| ------------------ | ----------------------------- | ----------------- | ----------- |
+| 1     | B1       | a_1  | 11292              | 112.92                        | 0                 | -273971877  |
+| 2     | B2       | a_2  | 4649               | 46.49                         | 0                 | -237904543  |
+| 3     | B3       | a_3  | 2994               | 29.94                         | 0                 | -44160852   |
+| 4     | B3       | b_3  | 547470.620351999   | 547.470620351999              | 174               | -2001207391 |
+| 5     | B3       | c_3  | 554600.120260004   | 554.600120260004              | 132               | -1969794310 |
+| 6     | B3       | d_3  | 549593.916998004   | 549.593916998004              | 153               | -1979939333 |
+| 7     | B4       | a_4  | 2063               | 20.63                         | 0                 | -54793609   |
+| 8     | B4       | b_4  | 210331.646815999   | 210.331646815999              | 17                | -744519961  |
+| 9     | B4       | c_4  | 213750.38061       | 213.750380609999              | 2                 | -747533748  |
+| 10    | B4       | d_4  | 205285.061562      | 205.285061561999              | 7                 | -762051044  |
+| 11    | B5       | a_5  | 1714               | 17.14                         | 0                 | -69599288   |
+| 12    | B5       | b_5  | 50362              | 50.362                        | 0                 | -219374659  |
+| 13    | B5       | c_5  | 47999              | 47.999                        | 0                 | -250958602  |
+| 14    | B5       | d_5  | 49564.437366       | 49.564437366                  | 1                 | -223098839  |
 
 ---------
 
